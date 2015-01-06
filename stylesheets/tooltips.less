@@ -1,21 +1,19 @@
 @import "ui-variables";
 
 .tooltip {
-  @tip-background-color: #fff;
-  @tip-text-color: #333;
   white-space: nowrap;
 
   .keystroke {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    color: #777;
-    padding-left: 2px;
+    font-size: unit(round(@font-size * 1.08), px);
+    color: lighten(@tip-text-color, 38%);
+    padding-left: unit(round(@font-size * 0.17), px);
   }
 
   &.in { opacity: 1; }
 
   .tooltip-inner {
-    line-height: 19px;
+    line-height: unit(round(@font-size * 1.58), px);
     border-radius: @component-border-radius;
     background-color: @tip-background-color;
     color: @tip-text-color;
