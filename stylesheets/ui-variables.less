@@ -1,14 +1,15 @@
 // Colors
+@import "syntax-variables";
 
-@text-color: #aaa;
-@text-color-subtle: #555;
-@text-color-highlight: #fff;
+@text-color: @syntax-text-color;
+@text-color-subtle: darken(@text-color, 38%);
+@text-color-highlight: lighten(@text-color, 38%);
 @text-color-selected: @text-color-highlight;
 
-@text-color-info: #5293d8;
-@text-color-success: #26c26a;
-@text-color-warning: #ff982d;
-@text-color-error: #c00;
+@text-color-info: @syntax-color-renamed;
+@text-color-success: @syntax-color-added;
+@text-color-warning: @syntax-color-modified;
+@text-color-error: @syntax-color-removed;
 
 @text-color-ignored: @text-color-subtle;
 @text-color-added: @text-color-success;
@@ -16,59 +17,61 @@
 @text-color-modified: @text-color-warning;
 @text-color-removed: @text-color-error;
 
-@background-color-info: #0098ff;
-@background-color-success: #17ca65;
-@background-color-warning: #ffaa2c;
-@background-color-error: #c00;
-@background-color-highlight: rgba(255, 255, 255, 0.07);
-@background-color-selected: #4182C4;
+@background-color-info: @text-color-info;
+@background-color-success: @text-color-success;
+@background-color-warning: @text-color-warning;
+@background-color-error: @text-color-error;
+@background-color-highlight: @syntax-gutter-background-color;
+@background-color-selected: @syntax-selection-color;
 
-@app-background-color: #333;
+@app-background-color: @syntax-background-color;
 
-@base-background-color: lighten(@tool-panel-background-color, 5%);
-@base-border-color: rgba(0, 0, 0, 0.5);
+@base-background-color: @syntax-background-color;
+@base-border-color: lighten(@base-background-color, 5%);
 
 @pane-item-background-color: @base-background-color;
-@pane-item-border-color: rgba(0, 0, 0, 0.5);
+@pane-item-border-color: @base-border-color;
 
-@input-background-color: #212224;
+@input-background-color: @base-background-color;
 @input-border-color: @base-border-color;
 
-@tool-panel-background-color: #1d1f21;
+@tool-panel-background-color: @base-background-color;
 @tool-panel-border-color: @base-border-color;
 
-@inset-panel-background-color: #161719;
-@inset-panel-border-color: @base-border-color;
+@inset-panel-background-color: lighten(@tool-panel-background-color, 5%);
+@inset-panel-border-color: lighten(@tool-panel-border-color, 5%);
 
-@panel-heading-background-color: #43484d;
-@panel-heading-border-color: fadein(@base-border-color, 10%);
+@panel-heading-background-color: @inset-panel-background-color;
+@panel-heading-border-color: @inset-panel-border-color;
 
-@overlay-background-color: #202123;
+@overlay-background-color: @base-background-color;
 @overlay-border-color: @background-color-highlight;
 
-@button-background-color: #43484d;
-@button-background-color-hover: lighten(@button-background-color, 5%);
-@button-background-color-selected: #5c6064;
+@button-background-color: lighten(@pane-item-background-color, 20%);
+@button-background-color-hover: lighten(@pane-item-border-color, 20%);
+@button-background-color-selected: @background-color-highlight;
 @button-border-color: @base-border-color;
 
-@tab-bar-background-color: #222;
-@tab-bar-border-color: darken(@tab-background-color-active, 10%);
-@tab-background-color: #333;
-@tab-background-color-active: #222;
-@tab-border-color: #484848;
+@tab-bar-background-color: @tool-panel-background-color;
+@tab-bar-border-color: @tool-panel-border-color;
+@tab-background-color: @tool-panel-background-color;
+@tab-background-color-active: @tool-panel-background-color;
+@tab-border-color: @tool-panel-border-color;
 
 @tree-view-background-color: @tool-panel-background-color;
 @tree-view-border-color: @tool-panel-border-color;
 
-@scrollbar-background-color: #222425; // Needs to be opaque -> atom/atom/issues/4578
-@scrollbar-color: rgba(92, 92, 92, 0.5);
+@scrollbar-background-color: @tool-panel-background-color;
+@scrollbar-color: lighten(@tool-panel-background-color, 5%);
 
-@ui-site-color-1: @background-color-success; // green
-@ui-site-color-2: @background-color-info; // blue
-@ui-site-color-3: @background-color-warning; // orange
-@ui-site-color-4: #db2ff4; // purple
-@ui-site-color-5: #f5e11d; // yellow
+@ui-site-color-1: @background-color-success;
+@ui-site-color-2: @background-color-info;
+@ui-site-color-3: @background-color-warning;
+@ui-site-color-4: #AE81FF;  // hardcoded for lack of useful syntax color var
+@ui-site-color-5: #E6DB74;  // hardcoded for lack of useful syntax color var
 
+@tip-background-color: @syntax-text-color;
+@tip-text-color: @syntax-background-color;
 
 // Sizes
 
