@@ -75,18 +75,18 @@
 
 // Sizes
 
-@font-size: 11px;
-@input-font-size: 14px;
+@font-size: 12px;
+@input-font-size: unit(round(@font-size * 1.17), px);
 
-@disclosure-arrow-size: 12px;
+@disclosure-arrow-size: @font-size;
 
-@component-padding: 10px;
-@component-icon-padding: 5px;
-@component-icon-size: 16px;
-@component-line-height: 25px;
-@component-border-radius: 2px;
+@component-padding: unit(round(@font-size * 0.8), px);
+@component-icon-padding: unit(round(@component-padding / 2), px);
+@component-icon-size: unit(round(@font-size * 1.33), px);
+@component-line-height: unit(round(@font-size * 2.08), px);
+@component-border-radius: unit(round(@font-size * 0.17), px);
 
-@tab-height: 26px;
+@tab-height: unit(round(@font-size * 2.17), px);
 
 
 // Other
