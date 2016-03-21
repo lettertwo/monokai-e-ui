@@ -1,0 +1,44 @@
+@import "syntax-variables";
+// add or import these into your Atom styles.less
+
+@normal-mode-color: @syntax-color-normal;
+@insert-mode-color: @syntax-color-insert;
+@visual-mode-color: @syntax-color-visual;
+
+@normal-mode-background-color: @syntax-background-color-normal;
+@insert-mode-background-color: @syntax-background-color-insert;
+@visual-mode-background-color: @syntax-background-color-visual;
+
+// vim mode in the status bar at the bottom
+// make it nice and big so you can see it out of the corner of your eye
+// without thinking about it.
+.status-bar-vim-mode-normal,
+.status-bar-vim-mode-insert,
+.status-bar-vim-mode-visual,
+.status-bar-vim-mode-plus-normal,
+.status-bar-vim-mode-plus-insert,
+.status-bar-vim-mode-plus-visual {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+  width: 18rem;
+  text-transform: uppercase;
+}
+
+.status-bar-vim-mode-normal,
+.status-bar-vim-mode-plus-normal {
+  background: @normal-mode-background-color;
+  color: @normal-mode-color;
+}
+
+.status-bar-vim-mode-insert,
+.status-bar-vim-mode-plus-insert {
+  background: @insert-mode-background-color;
+  color: @insert-mode-color;
+}
+
+.status-bar-vim-mode-visual,
+.status-bar-vim-mode-plus-visual {
+  background: @visual-mode-background-color;
+  color: @visual-mode-color;
+}
