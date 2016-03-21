@@ -27,18 +27,18 @@
 
 .status-bar-vim-mode-normal,
 .status-bar-vim-mode-plus-normal {
-  background: @normal-mode-background-color;
   color: @normal-mode-color;
+  background: @normal-mode-background-color;
 }
 
 .status-bar-vim-mode-insert,
 .status-bar-vim-mode-plus-insert {
-  background: @insert-mode-background-color;
-  color: @insert-mode-color;
+  color: spin(@insert-mode-color, 240deg);
+  background: @insert-mode-color;
 }
 
 .status-bar-vim-mode-visual,
 .status-bar-vim-mode-plus-visual {
-  background: @visual-mode-background-color;
-  color: @visual-mode-color;
+  color: spin(@visual-mode-color, 240deg);
+  background: @visual-mode-color;
 }
