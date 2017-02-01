@@ -30,12 +30,12 @@ atom-panel-container {
     will-change: top, position;
 
     &:hover {
-      background: #000;
+      background: lighten(@tree-view-header-color, 3%);
       cursor: pointer;
-      transition: 0.5s ease all;
+      transition: 0.3s ease all;
 
       &:after {
-        color: #40525a;
+        color: darken(@tree-view-header-text-color, 3%);
         content: 'open';
         font-size: 11px;
         font-weight: 500;

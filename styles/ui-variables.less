@@ -53,16 +53,16 @@
 // BASE COLORS
 @base-color: @seti-primary;
 @base-background-color: @black;
-@base-border-color: #060708;
 @app-background-color: @black;
+@base-border-color: @black-dark;
 
 // SIDEBAR
 @tree-view-background-color: lighten(@black, 3%);
 @tree-view-border-color: @base-border-color;
 @tree-view-highlight: lighten(@black, 10%);
-@tree-view-header-color: #090b0d;
 @tree-view-header-text-color: @white;
 @tree-view-text-color: @white;
+@tree-view-header-color: @black-dark;
 
 // TAB
 @top-bar: 60px;
@@ -70,8 +70,8 @@
 @tab-bar-background-color: lighten(@black, 3%);
 @tab-bar-border-color: @base-border-color;
 @tab-background-color: @gray-dark;
-@tab-text-color: #d4d7d6;
-@tab-background-color-active: #111213;
+@tab-text-color: @gray;
+@tab-background-color-active: @black;
 @tab-border-color: @base-border-color;
 @tab-height: @top-bar;
 
@@ -82,7 +82,7 @@
 @bad: @red;
 @warn: @yellow;
 @hidden: @gray-dark;
-@ignore: #41535b;
+@ignore: @gray;
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
@@ -102,7 +102,7 @@
 
 // Text colors
 @text-color: @white;
-@text-color-subtle: #aaaaaa;
+@text-color-subtle: darken(@text-color, 3%);
 @text-color-highlight: @white;
 @text-color-selected: @seti-primary;
 @text-color-info: @seti-primary;
