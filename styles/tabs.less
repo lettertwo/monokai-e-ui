@@ -3,7 +3,7 @@ atom-workspace-axis.vertical .tab-bar {
   // TAB BACKGROUND
   height: @top-bar;
   border-bottom: solid 2px rgba(0,0,0,0.3);
-  background: lighten(@tree-view-header-color, 7%);
+  background: @tab-bar-background-color;
 
   // SINGLE TAB
   .tab {
@@ -44,8 +44,9 @@ atom-workspace-axis.vertical .tab-bar {
 
     // ACTIVE TAB
     &.active {
-      border-right: solid 1px rgba(0,0,0,0.2);
       background: @tab-background-color-active;
+      color: @tab-text-color-active;
+      border-right: solid 1px @black-dark;
       z-index: 1;
       height: @top-bar;
 
