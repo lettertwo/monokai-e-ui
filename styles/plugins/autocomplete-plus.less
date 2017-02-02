@@ -8,11 +8,11 @@ autocomplete-suggestion-list {
       li {
         color: @white;
         &.selected {
-          background: @seti-primary;
-          color: @seti-primary-text;
+          background: @gray-dark;
           .word {
+            color: @white;
             .character-match {
-              color: @seti-primary-highlight;
+              color: @seti-primary;
             }
           }
           .left-label{
@@ -26,7 +26,7 @@ autocomplete-suggestion-list {
           }
         }
         .word {
-          color: @white !important;
+          color: @white;
           .character-match {
             color: @seti-primary;
           }
@@ -53,16 +53,16 @@ autocomplete-suggestion-list {
 
   .icon.property {
     color: @white;
-    background: @red;
+    background: @magenta;
   }
 
   .icon.code {
     color: @white;
-    background: @red;
+    background: @magenta;
   }
 
   .icon.selector {
-    color: @white;
+    color: @black;
     background: darken(@yellow, 25%);
   }
 
@@ -72,13 +72,13 @@ autocomplete-suggestion-list {
   }
 
   .icon.snippet {
-    color: @white;
-    background: darken(@green, 15%);
+    color: @black;
+    background: cyan;
   }
 
   .icon.tag {
     color: @white;
-    background: darken(@red, 15%);
+    background: darken(@magenta, 15%);
   }
 
 }
