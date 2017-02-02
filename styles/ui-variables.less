@@ -6,49 +6,51 @@
 
 @import "default-theme"; // SET DEFAULT THEME COLORS IN CASE USE HASN'T SET THEM.
 @import "user-theme"; // OVERRIDE DEFAULT COLORS WITH USER THEME
-
-// BASE COLORS
-@black: #1F1F1F;
-@black-dark: darken(@black, 5%);
-@white: #EEEEEE;
-@gray: lighten(@black, 20%);
-@gray-dark: lighten(@black, 3%);
-@gray-light: lighten(@black, 60%);
+@import "colors";
 
 // THEME COLORS
-@blue: #519aba;
-@blue-highlight: #1d5b91;
-@blue-text: #ffffff;
-@blue-secondary: @purple;
 
-@green: #8dc149;
-@green-highlight: #436b24;
-@green-text: #ffffff;
-@blue-secondary: @purple;
+// primary
+@red-highlight: saturate(lighten(@red, 10%), 30%);
+@red-text: @white;
 
-@orange: #e37933;
-@orange-highlight: #b55421;
-@orange-text: #ffffff;
+@green-highlight: saturate(lighten(@green, 10%), 30%);
+@green-text: @black;
 
-@pink: #f55385;
-@pink-highlight: #63213f;
-@pink-text: #ffffff;
+@blue-highlight: saturate(lighten(@blue, 10%), 30%);
+@blue-text: @white;
 
-@purple: #a074c4;
-@purple-highlight: #4f397c;
-@purple-text: #ffffff;
+// secondary
 
-@red: #cc3e44;
-@red-highlight: #7c1c20;
-@red-text: #ffffff;
+@yellow-highlight: saturate(lighten(@yellow, 10%), 30%);
+@yellow-text: @black;
 
-@steel: #7494a3;
-@steel-highlight: #293c44;
-@steel-text: #ffffff;
+@cyan-highlight: saturate(lighten(@cyan, 10%), 30%);
+@cyan-text: @black;
 
-@yellow: #cbcb41;
-@yellow-highlight: #a2852f;
-@yellow-text: #13181b;
+@magenta-highlight: saturate(lighten(@magenta, 10%), 30%);
+@magenta-text: @white;
+
+// tertiary
+
+@orange-highlight: saturate(lighten(@orange, 10%), 30%);
+@orange-text: @black;
+
+@chartreuse-highlight: saturate(lighten(@chartreuse, 10%), 30%);
+@chartreuse-text: @black;
+@chartreuse-secondary: @violet;
+
+@spring-highlight: saturate(lighten(@spring, 10%), 30%);
+@spring-text: @black;
+
+@azure-highlight: saturate(lighten(@azure, 10%), 30%);
+@azure-text: @black;
+
+@violet-highlight: saturate(lighten(@violet, 10%), 30%);
+@violet-text: @white;
+
+@rose-highlight: saturate(lighten(@rose, 10%), 30%);
+@rose-text: @white;
 
 // BASE COLORS
 @base-color: @seti-primary;
@@ -78,12 +80,6 @@
 
 // PANELS
 @panel-background-color: @tab-bar-background-color;
-
-@good: @green;
-@bad: @red;
-@warn: @yellow;
-@hidden: @gray-dark;
-@ignore: @gray;
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - -

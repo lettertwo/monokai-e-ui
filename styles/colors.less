@@ -1,0 +1,51 @@
+@black:      #1F1F1F;
+@black-dark: darken(@black, 5%);
+@white:      #EEEEEE;
+@gray:       mix(@black, @white);
+@gray-dark:  darken(@gray, 30%);
+@gray-light: lighten(@gray, 25%);
+
+// primary
+@red:   #E21F17;
+@green: #A6E22E;
+@blue:  #467BE7;
+
+// secondary
+@yellow:  #FFF26D;
+@cyan:    #66D9EF;
+@magenta: #F92672;
+
+// tertiary
+@orange:     mix(@red, @yellow);
+@chartreuse: mix(@green, @yellow);
+@spring:     mix(@green, @cyan);
+@azure:      mix(@blue, @cyan);
+@violet:     mix(@blue, @magenta);
+@rose:       mix(@red, @magenta);
+
+// quaternary
+@sunset:     mix(@magenta, @orange);
+@vermillion: mix(@red, @orange);
+@amber:      mix(@yellow, @orange);
+@gold:       mix(@yellow, @chartreuse);
+@lime:       mix(@green, @chartreuse);
+@olive:      mix(@green, @azure);
+@turquoise:  mix(@cyan, @spring);
+@sky:        mix(@cyan, @azure);
+@cerulean:   mix(@blue, @azure);
+@indigo:     mix(@blue, @violet);
+@purple:     mix(@blue, @rose);
+@pink:       mix(@magenta, @violet);
+@wine:       mix(@red, @violet);
+
+// variants
+@yellow-dark-gray: mix(@yellow, @gray-dark);
+@blue-gray-light:  mix(@blue, @gray-light);
+@blue-gray-dark:   mix(@blue, @gray-dark);
+
+// status
+@good: @green;
+@bad: @red;
+@warn: @orange;
+@hidden: @gray-dark;
+@ignore: @gray;

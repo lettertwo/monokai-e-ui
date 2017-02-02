@@ -16,16 +16,20 @@
       "description": "Select a default theme color. If you don't notice a difference, you may have to reload Atom to see them.",
       "type": "string",
       "enum": [
-        "Blue",
-        "Green",
-        "Orange",
-        "Pink",
-        "Purple",
         "Red",
-        "Steel",
-        "Yellow"
+        "Green",
+        "Blue",
+        "Yellow",
+        "Cyan",
+        "Magenta",
+        "Orange",
+        "Chartreuse",
+        "Spring",
+        "Azure",
+        "Violet",
+        "Rose"
       ],
-      "default": "Blue"
+      "default": "Chartreuse"
     },
     "font": {
       "title": "Font Family",
