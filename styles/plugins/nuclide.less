@@ -262,14 +262,24 @@ atom-panel .nuclide-ui-toolbar {
   }
 }
 
-.tool-panel {
-  .badge {
-    background-color: @gray-dark;
-    color: @seti-primary;
+// BADGES
+.badge {
+  background-color: @gray-dark;
+  color: @seti-primary;
 
-    &:hover {
-      background-color: @black;
-      color: @seti-primary-highlight;
-    }
+  &:hover {
+    background-color: @black;
+    color: @seti-primary-highlight;
   }
+}
+
+.highlight-info,
+.highlight-error,
+.highlight-success {
+  padding: 5px 7px;
+}
+
+// GUTTER POP-UPs
+.nuclide-diagnostics-gutter-ui-popup-header {
+  padding: 7px;
 }
