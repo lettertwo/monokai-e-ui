@@ -263,7 +263,8 @@ atom-panel .nuclide-ui-toolbar {
 }
 
 // BADGES
-.badge {
+.badge,
+.badge.badge-info {
   background-color: @gray-dark;
   color: @seti-primary;
 
@@ -273,13 +274,78 @@ atom-panel .nuclide-ui-toolbar {
   }
 }
 
+// HIGHLIGHTS
+.highlight,
 .highlight-info,
 .highlight-error,
+.highlight-warning,
 .highlight-success {
   padding: 5px 7px;
+  color: @gray-dark;
+}
+.highlight,
+.highlight-info {
+  background-color: @seti-primary;
+  color: @seti-primary-text;
+}
+.highlight-success {
+  background-color: @text-color-success;
+}
+.highlight-warning {
+  background-color: @text-color-warning;
+}
+.highlight-error {
+  background-color: @text-color-error;
 }
 
 // GUTTER POP-UPs
 .nuclide-diagnostics-gutter-ui-popup-header {
   padding: 7px;
+}
+
+// CONSOLE
+.nuclide-console-record {
+  padding: 5px 7px;
+
+  pre {
+    border: none;
+  }
+
+  .icon {
+    &::before {
+      font-size: 14px;
+      width: 14px;
+    }
+  }
+
+  &.level-error,
+  &.level-warning,
+  &.level-info,
+  &.level-success {
+    background-color: @black;
+  }
+
+  &.level-info pre {
+    color: @text-color-info;
+  }
+
+  &.level-error pre {
+    color: @text-color-error;
+  }
+
+  &.level-warning pre {
+    color: @text-color-warning;
+  }
+
+  &.level-success pre {
+    color: @text-color-success;
+  }
+}
+
+span.nuclide-console-record-source-label {
+  padding: inherit;
+
+  .highlight-success {
+    background-color: @text-color-success;
+  }
 }
