@@ -123,8 +123,8 @@ atom-panel.modal.nuclide-quick-open {
       padding: 10px 15px;
 
       .omnisearch-open-all {
-        background: @seti-primary;
-        color: @seti-primary-text;
+        background: @background-color-highlight;
+        color: @text-color-highlight;
       }
     }
 
@@ -144,7 +144,7 @@ atom-panel.modal.nuclide-quick-open {
       .quick-open-result-item {
 
         .quick-open-file-search-match {
-          color: @seti-primary;
+          color: @text-color-highlight;
         }
 
         &.selected {
@@ -153,20 +153,20 @@ atom-panel.modal.nuclide-quick-open {
             background: @seti-primary-text;
           }
 
-          color: @seti-primary;
+          color: @text-color-highlight;
 
           .quick-open-file-search-match {
-            color: @seti-primary-highlight;
+            color: @text-color-selected;
           }
 
           .recent-files-provider-result {
 
             .recent-files-provider-file-path {
-              color: @seti-primary;
+              color: @text-color-highlight;
             }
 
             .recent-files-provider-file-name {
-              color: @seti-primary-highlight;
+              color: @text-color-selected;
             }
           }
         }
@@ -211,8 +211,8 @@ status-bar .nuclide-navigation-stack-tile {
 // DIAGNOSTICS STATUS BAR
 status-bar .nuclide-diagnostics-highlight-group {
   .nuclide-diagnostics-status-bar-highlight {
-    background: @seti-primary;
-    color: @seti-primary-text;
+    background: @background-color-highlight;
+    color: @text-color-highlight;
     padding: 5px 10px;
     border-right: 1px solid @black;
 
