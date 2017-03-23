@@ -1,15 +1,24 @@
 atom-workspace-axis.vertical,
-atom-workspace.seti-compact atom-workspace-axis.vertical .title {
-  display: inline-flex;
+atom-workspace.seti-compact atom-workspace-axis.vertical {
+  .tab-bar .tab {
 
-  .foldername-tabs {
+      .icon:before {
+        align-self: center;
+      }
 
-    .folder {
-      color: @tab-text-color;
-    }
+      & > .title  {
 
-    .file {
-      font-weight: 700;
+      .foldername-tabs {
+        top: 0;
+
+        .folder {
+          color: @tab-text-color;
+        }
+
+        .file {
+          font-weight: 700;
+        }
+      }
     }
   }
 }
