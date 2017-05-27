@@ -48,6 +48,27 @@
       "type": "boolean",
       "default": "false",
       "order": 3
+    },
+    "accentColor": {
+      "title": "Accent Color",
+      "description": "Add a different pop of color to the UI!",
+      "type": "string",
+      "default": "Blue",
+      "enum": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow",
+        "Cyan",
+        "Magenta",
+        "Orange",
+        "Chartreuse",
+        "Spring",
+        "Azure",
+        "Violet",
+        "Rose"
+      ],
+      "order": 4
     }
   }
 }

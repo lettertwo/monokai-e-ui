@@ -11,6 +11,9 @@ module.exports =
     atom.config.observe 'monokai-e-one-dark-ui.hideDockButtons', (value) ->
       setHideDockButtons(value)
 
+    atom.config.observe 'monokai-e-one-dark-ui.accentColor', (value) ->
+      setAccentColor(value)
+
     # DEPRECATED: This can be removed at some point (added in Atom 1.17/1.18ish)
     # It removes `layoutMode`
     if atom.config.get('monokai-e-one-dark-ui.layoutMode')
@@ -20,6 +23,7 @@ module.exports =
     unsetFontSize()
     unsetTabSizing()
     unsetHideDockButtons()
+    unsetAccentColor()
 
 
 # Font Size -----------------------
@@ -53,3 +57,12 @@ setHideDockButtons = (hideDockButtons) ->
 
 unsetHideDockButtons = ->
   root.removeAttribute('theme-monokai-e-one-dark-ui-dock-buttons')
+
+
+# AccentColor ------------------------------
+
+setAccentColor = (accentColor) ->
+  console.log(accentColor)
+
+unsetAccentColor = ->
+  console.log('unsetting accentColor')
