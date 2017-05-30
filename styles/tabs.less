@@ -217,15 +217,7 @@
 
 atom-pane:only-child .tab.active:before,
 atom-pane.active .tab.active:before {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 2px;
-  background: @accent-color;
+  .marker();
 }
 
 // hide marker in docks

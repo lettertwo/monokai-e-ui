@@ -35,3 +35,15 @@
   border-color: @accent-color;
   box-shadow: 0 0 0 1px @accent-color;
 }
+
+.marker() {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  background: @accent-color;
+}
