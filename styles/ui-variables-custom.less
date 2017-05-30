@@ -78,7 +78,7 @@
 @accent-only-text-color: mix( hsv( @ui-hue, 100%, 66%), hsl( @ui-hue, 100%, 77%), @accent-luma ); // mix hsv + hsl (favor mostly hsl)
 
 // Components (Custom) -----------------
-@badge-background-color:            lighten(@background-color-highlight, 6%);
+@badge-background-color:            fade(@accent-bg-color, 66%);
 
 @button-text-color-selected:        @accent-bg-text-color;
 @button-border-color-selected:      @base-border-color;
