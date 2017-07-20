@@ -1,0 +1,44 @@
+@import "syntax-variables";
+
+@normal-mode-color: fadein(@syntax-cursor-color, 100);
+@insert-mode-color: fadein(@syntax-selection-flash-color, 100);
+@visual-mode-color: fadein(@syntax-selection-color, 100);
+
+@normal-mode-background-color: fade(@normal-mode-color, 30);
+@insert-mode-background-color: fade(@insert-mode-color, 30);
+@visual-mode-background-color: fade(@visual-mode-color, 30);
+
+// vim mode in the status bar at the bottom
+// make it nice and big so you can see it out of the corner of your eye
+// without thinking about it.
+.status-bar-vim-mode-normal,
+.status-bar-vim-mode-insert,
+.status-bar-vim-mode-visual,
+.status-bar-vim-mode-plus-normal,
+.status-bar-vim-mode-plus-insert,
+.status-bar-vim-mode-plus-visual {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+  max-width: 18rem;
+  min-width: 4em;
+  text-transform: uppercase;
+}
+
+.status-bar-vim-mode-normal,
+.status-bar-vim-mode-plus-normal {
+  color: @normal-mode-color;
+  background: @normal-mode-background-color;
+}
+
+.status-bar-vim-mode-insert,
+.status-bar-vim-mode-plus-insert {
+  color: @insert-mode-color;
+  background: @insert-mode-background-color;
+}
+
+.status-bar-vim-mode-visual,
+.status-bar-vim-mode-plus-visual {
+  color: @visual-mode-color;
+  background: @visual-mode-background-color;
+}
