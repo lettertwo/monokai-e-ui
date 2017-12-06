@@ -4,6 +4,26 @@
 
 @import "syntax-variables";
 
+// Fallback colors (Might be provided by syntax-variables).
+
+// primary
+.green()  { @green: hsl(140,  44%, 62%); } .green();
+.red()    {   @red: hsl(  9, 100%, 64%); } .red();
+.blue()   {  @blue: hsl(219,  79%, 66%); } .blue();
+
+// secondary
+.yellow()  {  @yellow: #EBDD5B; } .yellow();
+.cyan()    {    @cyan: #66CCE1; } .cyan();
+.magenta() { @magenta: #D831B0; } .magenta();
+
+// tertiary;
+.orange()     {     @orange: mix(@green, @magenta); } .orange();
+.chartreuse() { @chartreuse: mix(@green,  @yellow); } .chartreuse();
+.spring()     {     @spring: mix(@green,    @cyan); } .spring();
+.azure()      {      @azure: mix( @blue,    @cyan); } .azure();
+.violet()     {     @violet: mix( @blue, @magenta); } .violet();
+.rose()       {       @rose: mix(  @red, @magenta); } .rose();
+
 .ui-syntax-color() { @syntax-background-color: hsl(220,24%,20%); } .ui-syntax-color(); // fallback color
 @ui-syntax-color: @syntax-background-color;
 
@@ -13,7 +33,7 @@
 @ui-s-l: lightness(@ui-syntax-color);
 @ui-inv: 10%; // inverse lightness if below
 
-.ui-hue() when (@ui-s-s = 0) { @ui-hue: 220; } // Use blue hue when no saturation
+.ui-hue() when (@ui-s-s = 0) { @ui-hue: hue(@blue); } // Use blue hue when no saturation
 .ui-hue() when (@ui-s-s > 0) { @ui-hue: @ui-s-h; }
 .ui-hue();
 
