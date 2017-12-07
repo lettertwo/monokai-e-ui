@@ -1,30 +1,33 @@
 root = document.documentElement
+{CompositeDisposable} = require 'atom'
 
 module.exports =
+  package: atom.packages.getLoadedPackage 'monokai-e-ui'
+
   activate: (state) ->
-    atom.config.observe 'monokai-e-ui.fontSize', (value) ->
+    @disposables = new CompositeDisposable
+    @disposables.add atom.config.observe 'monokai-e-ui.fontSize', (value) ->
       setFontSize(value)
 
-    atom.config.observe 'monokai-e-ui.tabSizing', (value) ->
+    @disposables.add atom.config.observe 'monokai-e-ui.tabSizing', (value) ->
       setTabSizing(value)
 
-    atom.config.observe 'monokai-e-ui.hideDockButtons', (value) ->
+    @disposables.add atom.config.observe 'monokai-e-ui.hideDockButtons', (value) ->
       setHideDockButtons(value)
 
-    atom.config.observe 'monokai-e-ui.accentColor', (value) ->
-      setAccentColor(value)
-
-    # DEPRECATED: This can be removed at some point (added in Atom 1.17/1.18ish)
-    # It removes `layoutMode`
-    if atom.config.get('monokai-e-ui.layoutMode')
-      atom.config.unset('monokai-e-ui.layoutMode')
+    @disposables.add atom.config.onDidChange 'monokai-e-ui.accentColor', (value) =>
+      setAccentColor value.newValue, (err) =>
+        if err then console.error err else @refresh()
 
   deactivate: ->
+    @disposables.dispose()
     unsetFontSize()
     unsetTabSizing()
     unsetHideDockButtons()
-    unsetAccentColor()
 
+  refresh: ->
+    @package.deactivate()
+    setImmediate => @package.activate()
 
 # Font Size -----------------------
 
@@ -58,11 +61,16 @@ setHideDockButtons = (hideDockButtons) ->
 unsetHideDockButtons = ->
   root.removeAttribute('theme-monokai-e-ui-dock-buttons')
 
-
 # AccentColor ------------------------------
-
-setAccentColor = (accentColor) ->
-  console.log(accentColor)
-
-unsetAccentColor = ->
-  console.log('unsetting accentColor')
+setAccentColor = (accentColor, cb) ->
+  fs = require 'fs'
+  path = require 'path'
+  color = accentColor.toLowerCase()
+  pkg = atom.packages.getLoadedPackage 'monokai-e-ui'
+  optionsPath = "#{pkg.path}/styles/ui-options.less"
+  fs.readFile(optionsPath, (err, data) =>
+    if (not err and data.toString().includes(color))
+      cb(new Error("accentColor already set to #{color}"))
+    else
+      fs.writeFile optionsPath, "@accentColorName: '#{color}';", cb
+  )
